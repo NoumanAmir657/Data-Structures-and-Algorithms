@@ -30,8 +30,9 @@ class IntSLList {
         void addToTail(int);
         int deleteFromHead();
         int deleteFromTail();
-        void deleteNode(int)
+        void deleteNode(int);
         bool isInList(int) const;
+        void printList() const;
     
     private:
         IntSLLNode *head, *tail;

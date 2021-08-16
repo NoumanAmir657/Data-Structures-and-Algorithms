@@ -1,5 +1,6 @@
-#include <iostream.h>
+#include <iostream>
 #include "intSLList.h"
+
 
 IntSLList::~IntSLList() {
     for (IntSLLNode *p; !isEmpty(); ){
@@ -9,6 +10,7 @@ IntSLList::~IntSLList() {
         //the loop continues till it has deleted every node
     }
 }
+
 
 void IntSLList::addToHead(int value) {
     head = new IntSLLNode(value, head); // create new Node and assign it to head
@@ -45,4 +47,61 @@ int IntSLList::deleteFromHead(){
     }
     delete temp; // delete temp
     return value; //return deleted value
+}
+
+int IntSLList::deleteFromTail() {
+    int value = tail->info;
+
+    if (head == tail) {
+        delete head;
+        head = 0;
+        tail = 0;
+    }
+    else {
+        IntSLLNode *temp;
+        for (temp = head; temp->next != tail; temp = temp->next);
+        delete tail;
+        tail = temp;
+        tail->next = 0;
+    }
+    return value;
+}
+
+void IntSLList::deleteNode(int value) {
+    if (head != 0){ // if list not empty
+        if (head == tail && value == head->info) { // if there is only one node in the list and that node's info value matched the value to delete
+            delete head;
+            head = 0;
+            tail = 0;
+        }
+        else if (value == head->info) { // if there are more than one node in the list and the value to delete is the first node's value
+            IntSLLNode *temp = head;
+            head = head->next;
+            delete temp;
+        }
+        else {
+            IntSLLNode *pred, *temp;
+            for (pred = head, temp = head->next; temp != 0 && !(temp->info == value); pred = pred->next, temp = temp->next);
+
+            if (temp != 0) {
+                pred->next = temp->next;
+                if (temp == tail) {
+                    tail = pred;
+                }
+                delete temp;
+            }
+        }
+    }
+}
+
+bool IntSLList::isInList(int value) const {
+    IntSLLNode *temp;
+    for (temp = head; temp != 0 && !(temp->info == value); temp = temp->next);
+    return temp != 0;
+}
+
+void IntSLList::printList() const {
+    for (IntSLLNode *temp = head; temp != 0; temp = temp->next){
+        std::cout << temp->info <<'\n';
+    }
 }
