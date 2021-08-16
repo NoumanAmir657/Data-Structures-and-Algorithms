@@ -105,3 +105,31 @@ void IntSLList::printList() const {
         std::cout << temp->info <<'\n';
     }
 }
+
+void IntSLList::printReverse() const {
+    IntSLLNode *currentLast = tail;
+    int value = tail->info;
+    IntSLLNode *currentHead = head;
+    IntSLLNode *temp = 0;
+
+    while (currentHead != 0) {
+        // std::cout <<  currentLast->info << '\n';
+
+
+
+        while(currentHead->next != currentLast){    
+            currentHead = currentHead->next;
+        }
+
+
+
+        currentLast = currentHead;
+        currentHead = head;
+        std::cout <<  currentLast->next->info << '\n';
+
+        if (currentHead == head && currentLast == head){
+            currentHead = 0;
+        }
+        
+    }  
+}

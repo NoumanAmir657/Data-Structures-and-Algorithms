@@ -33,6 +33,7 @@ class IntSLList {
         void deleteNode(int);
         bool isInList(int) const;
         void printList() const;
+        void printReverse() const;
     
     private:
         IntSLLNode *head, *tail;

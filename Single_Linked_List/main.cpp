@@ -7,15 +7,12 @@ int main() {
     list.addToHead(5);
     list.addToTail(10);
     list.addToTail(15);
-    std::cout << list.isInList(20);
-    list.deleteNode(10);
-    list.deleteFromHead();
-    list.deleteFromTail();
-    list.printList();
+    list.addToTail(25);
+    list.addToTail(35);
+    list.addToTail(45);
+    list.addToTail(55);
 
-    if(!list.isEmpty()){
-        std::cout << list.deleteFromHead();
-    }
+    list.printReverse();
     
 
 
