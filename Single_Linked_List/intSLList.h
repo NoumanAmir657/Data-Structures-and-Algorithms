@@ -34,6 +34,7 @@ class IntSLList {
         bool isInList(int) const;
         void printList() const;
         void printReverse() const;
+        void reverseLinkedList();
     
     private:
         IntSLLNode *head, *tail;

@@ -12,7 +12,8 @@ int main() {
     list.addToTail(45);
     list.addToTail(55);
 
-    list.printReverse();
+    list.reverseLinkedList();
+    list.printList();
     
 
 

@@ -108,20 +108,12 @@ void IntSLList::printList() const {
 
 void IntSLList::printReverse() const {
     IntSLLNode *currentLast = tail;
-    int value = tail->info;
     IntSLLNode *currentHead = head;
-    IntSLLNode *temp = 0;
 
     while (currentHead != 0) {
-        // std::cout <<  currentLast->info << '\n';
-
-
-
         while(currentHead->next != currentLast){    
             currentHead = currentHead->next;
         }
-
-
 
         currentLast = currentHead;
         currentHead = head;
@@ -132,4 +124,28 @@ void IntSLList::printReverse() const {
         }
         
     }  
+}
+
+void IntSLList::reverseLinkedList() {
+    IntSLLNode *currentLast = tail;
+    IntSLLNode *currentHead = head;
+
+    while (currentHead != 0) {
+        while (currentHead->next != currentLast){
+            currentHead = currentHead->next;
+        }
+        //std::cout << currentHead->info << '\n';
+        currentLast->next = currentHead;
+        currentLast = currentHead;
+        currentHead = head;
+
+        if (currentHead == head && currentLast == head){
+            currentHead->next = 0;
+            currentHead = 0;
+        }
+    }
+
+    IntSLLNode *temp = head;
+    head = tail;
+    tail = temp;
 }
