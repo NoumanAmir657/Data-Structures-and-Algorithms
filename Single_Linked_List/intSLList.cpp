@@ -278,3 +278,37 @@ void IntSLList::swapNodes(int x, int y) {
         std::cout << "Not in the List \n";
     }
 }
+
+void IntSLList::sortedInsertion(int value){
+    if (value < head->info){
+        IntSLLNode *temp = head; 
+        head = new IntSLLNode(value);
+        head->next = temp; 
+    }
+    else {
+        IntSLLNode *temp = head->next;
+        IntSLLNode *pre = head;
+
+        while(temp != 0){
+            if (temp->info > value){
+                IntSLLNode *newNode = new IntSLLNode(value);
+                newNode->next = pre->next;
+                pre->next = newNode;
+
+                temp = 0;
+            }
+            else if (temp == tail && value > tail->info){
+                IntSLLNode *newNode = new IntSLLNode(value);
+                tail = newNode;
+                temp->next = newNode;
+                newNode->next = 0;
+
+                temp = 0;
+            }
+            else {
+                pre = temp;
+                temp = temp->next;
+            }
+        }
+    }
+}

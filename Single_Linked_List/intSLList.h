@@ -38,6 +38,7 @@ class IntSLList {
         void deleteOdds();
         void groupingNodes();
         void swapNodes(int, int);
+        void sortedInsertion(int);
     
     private:
         IntSLLNode *head, *tail;
