@@ -223,3 +223,58 @@ void IntSLList::groupingNodes() {
         }
     }
 }
+
+void IntSLList::swapNodes(int x, int y) {
+    if (IntSLList::isInList(x) && IntSLList::isInList(y)){
+        IntSLLNode *temp;
+        IntSLLNode *pre;
+        for (temp = head, pre = head; temp != 0 && !(temp->info == x); pre = temp, temp = temp->next);
+        IntSLLNode *temp2;
+        IntSLLNode *pre2;
+        for (temp2 = head, pre2 = head; temp2 != 0 && !(temp2->info == y); pre2 = temp2, temp2 = temp2->next);
+
+        IntSLLNode *swap = 0;
+        
+        if (temp == head || temp2 == head){
+            if (temp == head){
+                swap = head;
+                head = pre2->next;
+                pre2->next = swap;    
+
+                swap = temp->next;
+                temp->next = temp2->next;
+                temp2->next = swap;        
+            }
+            else if (temp2 == head){
+                swap = head;
+                head = pre->next;
+                pre->next = swap;
+
+                swap = temp->next;
+                temp->next = temp2->next;
+                temp2->next = swap;
+            }
+        }
+
+        else {
+            if (temp == tail){
+                tail = temp2;
+            }
+
+            else if(temp2 == tail) {
+                tail = temp;
+            }
+
+            swap = pre->next;
+            pre->next = pre2->next;
+            pre2->next = swap;
+
+            swap = temp->next;
+            temp->next = temp2->next;
+            temp2->next = swap;
+        }
+    }
+    else {
+        std::cout << "Not in the List \n";
+    }
+}

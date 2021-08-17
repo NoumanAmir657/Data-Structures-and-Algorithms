@@ -37,6 +37,7 @@ class IntSLList {
         void reverseLinkedList();
         void deleteOdds();
         void groupingNodes();
+        void swapNodes(int, int);
     
     private:
         IntSLLNode *head, *tail;

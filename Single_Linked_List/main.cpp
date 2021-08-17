@@ -13,7 +13,8 @@ int main() {
 
     //list.reverseLinkedList();
     //list.deleteOdds();
-    list.groupingNodes();    
+    //list.groupingNodes();
+    list.swapNodes(1,6);    
     list.printList();
     
 
