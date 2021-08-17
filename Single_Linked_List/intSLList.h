@@ -35,6 +35,7 @@ class IntSLList {
         void printList() const;
         void printReverse() const;
         void reverseLinkedList();
+        void deleteOdds();
     
     private:
         IntSLLNode *head, *tail;

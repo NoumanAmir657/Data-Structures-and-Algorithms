@@ -127,25 +127,55 @@ void IntSLList::printReverse() const {
 }
 
 void IntSLList::reverseLinkedList() {
-    IntSLLNode *currentLast = tail;
-    IntSLLNode *currentHead = head;
+    if (!IntSLList::isEmpty()){
+        IntSLLNode *currentLast = tail;
+        IntSLLNode *currentHead = head;
 
-    while (currentHead != 0) {
-        while (currentHead->next != currentLast){
-            currentHead = currentHead->next;
+        while (currentHead != 0) {
+            while (currentHead->next != currentLast){
+                currentHead = currentHead->next;
+            }
+            //std::cout << currentHead->info << '\n';
+            currentLast->next = currentHead;
+            currentLast = currentHead;
+            currentHead = head;
+
+            if (currentHead == head && currentLast == head){
+                currentHead->next = 0;
+                currentHead = 0;
+            }
         }
-        //std::cout << currentHead->info << '\n';
-        currentLast->next = currentHead;
-        currentLast = currentHead;
-        currentHead = head;
 
-        if (currentHead == head && currentLast == head){
-            currentHead->next = 0;
-            currentHead = 0;
+        IntSLLNode *temp = head;
+        head = tail;
+        tail = temp;
+    }
+    else {
+        std::cout << "List is empty";
+    } 
+}
+
+void IntSLList::deleteOdds() {
+    IntSLLNode *temp = head;
+    IntSLLNode *pre = head;
+
+    if (!(IntSLList::isEmpty())){
+        if ((head->info % 2) != 0) {
+            head = head->next; //points to address of 2
+        }
+
+        temp = head;
+
+        while (temp != 0) {
+            if ((temp->info % 2) != 0){
+                pre->next = temp->next;
+                delete temp;
+                temp = pre->next;
+            }
+            else {
+                pre = temp;
+                temp = temp->next;
+            }
         }
     }
-
-    IntSLLNode *temp = head;
-    head = tail;
-    tail = temp;
 }
