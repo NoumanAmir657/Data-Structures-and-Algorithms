@@ -179,3 +179,47 @@ void IntSLList::deleteOdds() {
         }
     }
 }
+
+void IntSLList::groupingNodes() {
+    IntSLLNode *temp = head;
+    IntSLLNode *current = head;
+    IntSLLNode *pre = head;
+    IntSLLNode *swap = 0;
+    IntSLLNode *swap2 = 0;
+    bool found;
+
+    if (!IntSLList::isEmpty()){
+        while (current != 0){
+            found = true;
+            while (found) {
+                if (current->next != 0){
+                    if ((current->next->info % 2) != 0){
+                        pre = current;
+                        current = current->next;
+                        found = false;
+                    }
+                    else {
+                        pre = current;
+                        current = current->next;
+                    }
+                }
+                else {
+                    found = false;
+                }
+            }
+            if (current->next != 0){
+                swap = temp->next;
+                temp->next = pre->next;
+                swap2 = current->next;
+                current->next = swap;
+                pre->next = swap2;
+
+                temp = current;
+                current = current->next->next;
+            }
+            else {
+                current = 0;
+            }
+        }
+    }
+}

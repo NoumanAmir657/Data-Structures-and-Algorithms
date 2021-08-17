@@ -9,13 +9,11 @@ int main() {
     list.addToTail(4);
     list.addToTail(5);
     list.addToTail(6);
-    list.addToTail(7);
-    list.addToTail(8);
-    list.addToTail(9);
     list.addToHead(1);
 
     //list.reverseLinkedList();
-    list.deleteOdds();    
+    //list.deleteOdds();
+    list.groupingNodes();    
     list.printList();
     
 
