@@ -236,7 +236,7 @@ void DoublyLinkedList::swapNodes(int x, int y) {
 void DoublyLinkedList::groupNodes() {
     DLLNode *temp = head;
     DLLNode *current = head;
-    //DLLNode *pre = head;
+    DLLNode *pre = head;
     DLLNode *swap = 0;
     DLLNode *swap2 = 0;
     bool found;
@@ -247,37 +247,38 @@ void DoublyLinkedList::groupNodes() {
             while (found) {
                 if (current->next != 0){
                     if ((current->next->info % 2) != 0){
-                        //pre = current;
+                        pre = current;
                         current = current->next;
                         found = false;
                     }
                     else {
-                        //pre = current;
+                        pre = current;
                         current = current->next;
+                        if (current == tail){
+                            current = 0;
+                            found = false;
+                        }
                     }
                 }
                 else {
                     found = false;
                 }
             }
-            if (current->next != 0){
-                //current has 3
-                //temp has 1
-                swap = current->prev->next;
-                current->prev->next = current->next;
-                current->prev->prev =  current;
+            if (current != 0 && pre != head){
+                swap = temp->next;
+                temp->next = pre->next;
+                swap2 = current->next;
+                current->next = swap;
+                pre->next = swap2;
 
-                temp->next = current;
-                current->next = current->prev;
+                pre->prev = current;
                 current->prev = temp;
 
-                
-
                 temp = current;
-                current = current->next->next;
+                current = current->next;
             }
-            else {
-                current = 0;
+            else if (pre == head){
+                temp = current;
             }
         }
     }

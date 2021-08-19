@@ -10,6 +10,7 @@ int main() {
     list.addToDLLTail(6);
     list.addToDLLTail(7);
     list.addToDLLTail(8);
+    list.addToDLLTail(9);
 
 
     list.groupNodes();
