@@ -167,3 +167,68 @@ void DoublyLinkedList::reverseList() {
         std::cout << "The list is empty\n";
     }
 }
+
+void DoublyLinkedList::swapNodes(int x, int y) {
+    if (DoublyLinkedList::isInList(x) && DoublyLinkedList::isInList(y)){
+        DLLNode *temp;
+        for (temp = head; temp != 0 && !(temp->info == x); temp = temp->next);
+        
+        DLLNode *temp2;
+        for (temp2 = head; temp2 != 0 && !(temp2->info == y); temp2 = temp2->next);
+
+        DLLNode *swap = 0;
+        
+        if (temp == head || temp2 == head){
+            if (temp == head){
+                swap = head; //swap store head address
+                head = temp2->prev->next; // the second value predecessor next is saved into head
+                temp2->prev->next = swap; // the second value predecessor next points to head now
+
+                swap = temp->prev;
+                temp->prev = temp2->prev;
+                temp2->prev = swap;
+
+                swap = temp->next;
+                temp->next = temp2->next;
+                temp2->next = swap;
+            }
+            else if (temp2 == head){
+                swap = head; //swap store head address
+                head = temp->prev->next; // the second value predecessor next is saved into head
+                temp->prev->next = swap; // the second value predecessor next points to head now
+
+                swap = temp->prev;
+                temp->prev = temp2->prev;
+                temp2->prev = swap;
+
+                swap = temp->next;
+                temp->next = temp2->next;
+                temp2->next = swap;
+            }
+        }
+        else {
+            if (temp == tail){
+                tail = temp2;
+            }
+
+            else if(temp2 == tail) {
+                tail = temp;
+            }
+
+            swap = temp->prev->next;
+            temp->prev->next = temp2->prev->next;
+            temp2->prev->next = swap;
+
+            swap = temp->prev;
+            temp->prev = temp2->prev;
+            temp2->prev = swap;
+
+            swap = temp->next;
+            temp->next = temp2->next;
+            temp2->next = swap;
+        }
+    }
+    else {
+        std::cout << "Not in the List \n";
+    }
+}

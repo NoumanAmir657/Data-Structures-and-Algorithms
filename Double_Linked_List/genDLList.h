@@ -37,6 +37,7 @@ class DoublyLinkedList {
         int deleteFromHead();
         void deleteNode(int);
         void reverseList();
+        void swapNodes(int, int);
 
     protected:
         DLLNode *head, *tail;

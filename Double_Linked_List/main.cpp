@@ -13,7 +13,7 @@ int main() {
 
     list.deleteNode(4);
 
-    list.reverseList();
+    list.swapNodes(3,7);
     list.printList();
     // std::cout << list.isInList(3);
     // list.deleteFromDLLTail();
