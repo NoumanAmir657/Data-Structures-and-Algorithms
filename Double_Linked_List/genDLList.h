@@ -33,6 +33,10 @@ class DoublyLinkedList {
         void printList();
         void insertAtFront(int);
         void insertSorted(int);
+        bool isInList(int);
+        int deleteFromHead();
+        void deleteNode(int);
+        void reverseList();
 
     protected:
         DLLNode *head, *tail;
