@@ -32,6 +32,7 @@ class DoublyLinkedList {
         int deleteFromDLLTail();
         void printList();
         void insertAtFront(int);
+        void insertSorted(int);
 
     protected:
         DLLNode *head, *tail;

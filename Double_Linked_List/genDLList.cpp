@@ -53,3 +53,33 @@ void DoublyLinkedList::insertAtFront(int value) {
         tail = head;
     }
 }
+
+void DoublyLinkedList::insertSorted(int value) {
+    if (!DoublyLinkedList::isEmpty()){
+        if (value < head->info){
+            DoublyLinkedList::insertAtFront(value);    
+        }
+        else{
+            DLLNode *temp = head->next;
+
+            while (temp != 0){
+                if (temp->info > value){
+                    DLLNode *newNode = new DLLNode(value, temp, temp->prev);
+                    temp->prev->next = newNode;
+                    temp->prev = newNode;
+
+                    temp = 0;
+                }
+                else if (temp == tail && tail->info < value){
+                    DoublyLinkedList::addToDLLTail(value);
+                }
+                else {
+                    temp = temp->next;
+                }
+            }
+        }
+    }
+    else {
+        DoublyLinkedList::insertAtFront(value);
+    }
+}
