@@ -22,9 +22,16 @@ class DoublyLinkedList {
             head = 0;
             tail = 0;
         }
+        ~DoublyLinkedList();
+
+        bool isEmpty() {
+            return head == 0 ? true : false;
+        }
+
         void addToDLLTail(int);
         int deleteFromDLLTail();
         void printList();
+        void insertAtFront(int);
 
     protected:
         DLLNode *head, *tail;
