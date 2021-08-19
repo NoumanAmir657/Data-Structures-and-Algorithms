@@ -193,7 +193,7 @@ void IntSLList::groupingNodes() {
             found = true;
             while (found) {
                 if (current->next != 0){
-                    if ((current->next->info % 2) != 0){
+                    if ((current->next->info % 2) == 0){
                         pre = current;
                         current = current->next;
                         found = false;
@@ -201,13 +201,17 @@ void IntSLList::groupingNodes() {
                     else {
                         pre = current;
                         current = current->next;
+                        if (current == tail){
+                            current = 0;
+                            found = false;
+                        }
                     }
                 }
                 else {
                     found = false;
                 }
             }
-            if (current->next != 0){
+            if (current != 0 && pre != head){
                 swap = temp->next;
                 temp->next = pre->next;
                 swap2 = current->next;
@@ -215,10 +219,10 @@ void IntSLList::groupingNodes() {
                 pre->next = swap2;
 
                 temp = current;
-                current = current->next->next;
+                current = current->next;
             }
-            else {
-                current = 0;
+            else if (pre == head){
+                temp = current;
             }
         }
     }

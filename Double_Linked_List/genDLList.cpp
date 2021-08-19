@@ -232,3 +232,53 @@ void DoublyLinkedList::swapNodes(int x, int y) {
         std::cout << "Not in the List \n";
     }
 }
+
+void DoublyLinkedList::groupNodes() {
+    DLLNode *temp = head;
+    DLLNode *current = head;
+    //DLLNode *pre = head;
+    DLLNode *swap = 0;
+    DLLNode *swap2 = 0;
+    bool found;
+
+    if (!DoublyLinkedList::isEmpty()){
+        while (current != 0){
+            found = true;
+            while (found) {
+                if (current->next != 0){
+                    if ((current->next->info % 2) != 0){
+                        //pre = current;
+                        current = current->next;
+                        found = false;
+                    }
+                    else {
+                        //pre = current;
+                        current = current->next;
+                    }
+                }
+                else {
+                    found = false;
+                }
+            }
+            if (current->next != 0){
+                //current has 3
+                //temp has 1
+                swap = current->prev->next;
+                current->prev->next = current->next;
+                current->prev->prev =  current;
+
+                temp->next = current;
+                current->next = current->prev;
+                current->prev = temp;
+
+                
+
+                temp = current;
+                current = current->next->next;
+            }
+            else {
+                current = 0;
+            }
+        }
+    }
+}

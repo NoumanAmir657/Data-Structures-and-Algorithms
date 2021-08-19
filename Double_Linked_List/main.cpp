@@ -11,9 +11,8 @@ int main() {
     list.addToDLLTail(7);
     list.addToDLLTail(8);
 
-    list.deleteNode(4);
 
-    list.swapNodes(3,7);
+    list.groupNodes();
     list.printList();
     // std::cout << list.isInList(3);
     // list.deleteFromDLLTail();

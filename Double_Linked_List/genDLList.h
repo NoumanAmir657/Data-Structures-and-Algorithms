@@ -38,6 +38,7 @@ class DoublyLinkedList {
         void deleteNode(int);
         void reverseList();
         void swapNodes(int, int);
+        void groupNodes();
 
     protected:
         DLLNode *head, *tail;
