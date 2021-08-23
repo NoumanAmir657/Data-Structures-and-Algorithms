@@ -2,7 +2,7 @@
 #include "stack.h"
 
 int main (){
-    Stack stack;
+    Stack <int> stack;
     //std::cout << stack.isEmpty();
 
     stack.push(1);

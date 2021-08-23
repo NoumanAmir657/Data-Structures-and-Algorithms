@@ -1,6 +1,7 @@
 #ifndef STACK
 #define STACK
 
+template <class T>
 class Stack {
     public:
         Stack() {
@@ -8,13 +9,14 @@ class Stack {
         }
         bool isEmpty() const;
         bool isFull() const;
-        void push(int);
-        int pop();
-        int peek();
+        void push(T);
+        T pop();
+        T peek();
+        bool checkBraces();
     
     private:
-        const int capacity = 5;
-        int stackArray[5];
+        const int capacity = 100;
+        T stackArray[100];
         int top;
 };
 

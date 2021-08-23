@@ -1,15 +1,18 @@
 #include <iostream>
 #include "stack.h"
 
-bool Stack::isEmpty() const {
+
+template <class T> bool Stack<T>::isEmpty() const {
     return top == -1;
 }
 
-bool Stack::isFull() const {
+
+template <class T> bool Stack<T>::isFull() const {
     return top == (capacity-1);
 }
 
-void Stack::push(int value){
+
+template <class T> void Stack<T>::push(T value){
     if (!Stack::isFull()){
         stackArray[top+1] = value;
         ++top;
@@ -20,7 +23,8 @@ void Stack::push(int value){
     }
 }
 
-int Stack::pop() {
+
+template <class T> T Stack<T>::pop() {
     if (!Stack::isEmpty()){
         return stackArray[top--];
     }
@@ -29,7 +33,7 @@ int Stack::pop() {
     }
 }
 
-int Stack::peek() {
+template <class T> T Stack<T>::peek() {
     if (!Stack::isEmpty()){
         return stackArray[top];
     }
@@ -37,3 +41,5 @@ int Stack::peek() {
         return -1;
     }
 }
+
+template class Stack<int>;
