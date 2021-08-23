@@ -44,5 +44,5 @@ template <class T> T Stack<T>::peek() {
     }
 }
 
-// template class Stack<int>;
+template class Stack<int>;
 template class Stack<char>;

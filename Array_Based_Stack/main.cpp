@@ -1,14 +1,17 @@
 #include <iostream>
 #include "stack.h"
 #include <string>
+#include <cmath>
 
 bool checkBraces(); // application
-void infinixToPostfix(); //application
-int getPrecedence(char); //utility function
+void infinixToPostfix(); // application
+int getPrecedence(char); // utility function
+int evaluate(); // application
 
 int main (){
     //checkBraces();
     //infinixToPostfix();
+    evaluate();
     std::cin.get();
     return 1;
 }
@@ -107,4 +110,64 @@ int getPrecedence(char c) {
     else {
         return -1;
     }
+}
+
+int evaluate() {
+    std::string exp = "2 430 10+*3^";
+    Stack<int> stack;
+    char c;
+    std::string temp;
+    int result = 0;
+    int operand1 = 0;
+    int operand2 = 0;
+
+    for(int i = 0; i < exp.size(); ++i){
+        c = exp[i];
+        if (c == ' '){
+            if(temp.size()){
+                stack.push(std::stoi(temp));
+                temp.clear();
+            }
+        }
+        else if (c == '+' || c == '-' || c == '*' || c == '/' || c == '^'){
+            if(temp.size()){
+                stack.push(std::stoi(temp));
+                temp.clear();
+            }
+            
+
+            if (c == '+'){
+                result = stack.pop() + stack.pop();
+                stack.push(result);
+            }
+            else if(c == '-'){
+                operand1 = stack.pop();
+                operand2 = stack.pop();
+                result = operand2 - operand1;
+                stack.push(result);
+            }
+            else if(c == '*'){
+                result = stack.pop() * stack.pop();
+                stack.push(result);
+            }
+            else if(c == '/'){
+                operand1 = stack.pop();
+                operand2 = stack.pop();
+                result = operand2/operand1;
+                stack.push(result);
+            }
+            else if(c == '^'){
+                operand1 = stack.pop();
+                operand2 = stack.pop();
+                result = pow(operand2,operand1);
+                stack.push(result);
+            }
+        }
+        else {
+            temp += c;
+        }
+    }
+
+    std::cout << result;
+    return result;
 }
