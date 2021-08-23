@@ -12,7 +12,6 @@ class Stack {
         void push(T);
         T pop();
         T peek();
-        bool checkBraces();
     
     private:
         const int capacity = 100;

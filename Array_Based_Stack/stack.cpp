@@ -26,9 +26,11 @@ template <class T> void Stack<T>::push(T value){
 
 template <class T> T Stack<T>::pop() {
     if (!Stack::isEmpty()){
+        std::cout << stackArray[top] << " was poped from the stack\n";
         return stackArray[top--];
     }
     else {
+        std::cout << "Stack is empty\n";
         return -1;
     }
 }
@@ -42,4 +44,5 @@ template <class T> T Stack<T>::peek() {
     }
 }
 
-template class Stack<int>;
+// template class Stack<int>;
+template class Stack<char>;
