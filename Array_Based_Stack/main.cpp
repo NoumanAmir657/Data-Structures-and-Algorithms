@@ -97,6 +97,7 @@ void infinixToPostfix() {
     std::cout << postfix;
 }
 
+// Application of Stack
 int getPrecedence(char c) {
     if (c == '+' || c == '-'){
         return 0;
@@ -112,6 +113,7 @@ int getPrecedence(char c) {
     }
 }
 
+// Application of Stack
 int evaluate() {
     std::string exp = "2 430 10+*3^";
     Stack<int> stack;
