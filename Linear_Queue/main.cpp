@@ -13,7 +13,25 @@ int main() {
     q.enqueue(3);
     q.enqueue(4);
     q.enqueue(5);
-    q.enqueue(10);
+    
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+    q.dequeue();
+
+    q.enqueue(25);
+    q.enqueue(26);
+    q.enqueue(27);
+    q.enqueue(30);
+
+    std::cout << q.firstElement() << '\n';
 
     std::cin.get();
     return 1;

@@ -17,6 +17,7 @@ class LinearQueue {
         bool isEmpty(){
             return first == -1;
         }
+        T firstElement();
 
     private:
         int first, last;
