@@ -1,3 +1,5 @@
+// Time Complexity O(n^2)
+// Space Complexity O(1)
 var twoSum = (nums, target) => {
     for (let i = 0; i < nums.length; ++i){
         const numberToFind = target - nums[i];
