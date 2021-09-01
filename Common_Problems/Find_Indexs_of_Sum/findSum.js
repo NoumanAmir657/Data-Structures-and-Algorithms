@@ -1,6 +1,5 @@
 // Time Complexity O(n^2)
 // Space Complexity O(1)
-
 // brute force solution
 var twoSum = (nums, target) => {
     for (let i = 0; i < nums.length; ++i){
@@ -15,10 +14,11 @@ var twoSum = (nums, target) => {
     return null;
 };
 
-// optimized solution
+
 
 // Time Complexity O(n)
 // Space Complexity O(n)
+// optimized solution
 var optimizedTwoSum = (nums, target) => {
     const numsMap = {};
     

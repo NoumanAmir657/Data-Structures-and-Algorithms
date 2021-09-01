@@ -6,6 +6,7 @@ class ChessBoard {
         ChessBoard(); // for 8 x 8 chessboard
         ChessBoard(int); // for n x n chessboard
         void findSolutions();
+        void howManySolutions();
 
     private:
         bool available = true; // bool value that indicates availability

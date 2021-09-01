@@ -5,6 +5,7 @@ ChessBoard::ChessBoard() {
     available = true;
     squares = 8;
     norm = squares - 1;
+    howMany = 0;
 
     initializeBoard();
 }
@@ -13,6 +14,8 @@ ChessBoard::ChessBoard(int n){
     available = true;
     squares = n;
     norm = squares - 1;
+    howMany = 0;
+
     initializeBoard();
 }
 
@@ -65,5 +68,10 @@ void ChessBoard::printBoard() {
     for (int i = 0; i < squares; ++i){
         std::cout << "Position of Queen in row " << i << " is " << posInRow[i] << '\n';
     }
+    howMany++;
     std::cout << "---------------------------------------------------------------------\n";
+}
+
+void ChessBoard::howManySolutions() {
+    std::cout << "Number of Solutions are: " << howMany << std::endl;
 }
