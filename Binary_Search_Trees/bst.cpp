@@ -2,7 +2,7 @@
 
 // worst case time complexity is O(n)
 template<class T>
-T* BST<T>::search(Node<T> *p, const T &value) const{
+T BST<T>::search(Node<T> *p, const T &value) const{
     while (p != 0) {
         if (value == p->info) {
             return p->info;
@@ -18,7 +18,7 @@ T* BST<T>::search(Node<T> *p, const T &value) const{
 }
 
 // breadth first traversal: top-down left to right
-template <class T>
+template<class T>
 void BST<T>::breadthFirst() {
     Queue<Node<T>*> queue;
     Node<T> *p = root;
@@ -74,6 +74,7 @@ void BST<T>::postorder(Node<T> *p){
     }
 }
 
+// an algorithm for traversing a binary search tree without using stack
 template<class T>
 void BST<T>::MorrisInorder(){
     Node<T> *p = root, *temp;
@@ -99,6 +100,31 @@ void BST<T>::MorrisInorder(){
                 p = p->right;
             }
         }
+    }
+}
+
+template<class T>
+void BST<T>::insert(const T& value){
+    Node<T> *p = root, *prev = 0;
+
+    while(p != 0){
+        prev = p;
+        if (value < p->info){
+            p = p->left;
+        }
+        else {
+            p = p->right;
+        }
+    }
+
+    if(root == 0){
+        root = new Node<T>(value);
+    }
+    else if(value < prev->info){
+        prev->left = new Node<T>(value);
+    }
+    else {
+        prev->right = new Node<T>(value);
     }
 }
 
