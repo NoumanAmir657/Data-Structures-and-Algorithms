@@ -196,4 +196,67 @@ void BST<T>::findAndDeleteByMerging(const T &value) {
     }
 }
 
+// 2) deletion by copying
+template<class T>
+void BST<T>::deleteByCopying(Node<T>*& node){
+    Node<T> *temp = node, *previous;
+    if (node->right == 0){
+        node = node->left;
+    }
+    else if(node->left == 0){
+        node = node->right;
+    }
+    else {
+        temp = node->left;
+        previous = node;
+        while(temp->right != 0){
+            previous = node;
+            temp = temp->right;
+        }
+        node->info = temp->info;
+        if (previous == node) { // if the node to be deleted has only 1 right and left descendent
+            previous->left = temp->left;
+        }
+        else {
+            previous->right = temp->left;
+        }
+    }
+    delete temp;
+}
+
+template<class T>
+void BST<T>::findAndDeleteByCopying(const T &value) {
+    Node<T> *node = root, *prev = 0;
+    while (node != 0){
+        if (node->info == value){
+            break;
+        }
+        prev = node;
+        if (value < node->info){
+            node = node->left;
+        }
+        else {
+            node = node->right;
+        }
+    }
+    
+    if (node != 0 && node->info == value){
+        if (node == root){
+            deleteByCopying(root);
+        }
+        else if(prev->left == node){
+            deleteByCopying(prev->left);
+        }
+        else {
+            deleteByCopying(prev->right);
+        }
+    }
+    else if (root != 0){
+        std::cout << value << " is not in the tree\n";
+    }
+    else {
+        std::cout << "The tree is empty\n";
+    }
+}
+
 template class BST<int>;

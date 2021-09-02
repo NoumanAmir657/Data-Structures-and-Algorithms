@@ -20,7 +20,9 @@ int main (){
     b.postorder();
     */
 
-    b.findAndDeleteByMerging(3);
+    // b.findAndDeleteByMerging(3);
+    b.findAndDeleteByCopying(3);
+    
     b.preorder();
     std::cin.get();
     return 1;
