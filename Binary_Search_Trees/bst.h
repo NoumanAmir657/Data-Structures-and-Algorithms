@@ -54,7 +54,7 @@ class BST {
             clear();
         }
         void clear(){
-            // clear(root);
+            clear(root);
             root = 0;
         }
         bool isEmpty() const {
@@ -80,7 +80,7 @@ class BST {
         void MorrisInorder();
         void insert(const T&);
         void deleteByMerging(Node<T>*&);
-        void findAndDeleteByMerging(Node<T>*&);
+        void findAndDeleteByMerging(const T&);
         void deleteByCopying(Node<T>*&);
         void balance(T*, int, int);
 

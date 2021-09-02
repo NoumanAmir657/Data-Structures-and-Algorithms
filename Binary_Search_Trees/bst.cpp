@@ -128,4 +128,72 @@ void BST<T>::insert(const T& value){
     }
 }
 
+// deleting bst
+template<class T>
+void BST<T>::clear(Node<T> *p){
+    if (p != 0){
+        clear(p->left);
+        clear(p->right);
+        delete p;
+    }
+}
+
+// deletion of node from binary tree
+// 1) deletion by merging
+template<class T>
+void BST<T>::deleteByMerging(Node<T>*& node){
+    Node<T> *temp = node;
+    if (node->right == 0){
+        node = node->left;
+    }
+    else if(node->left == 0){
+        node = node->right;
+    }
+    else {
+        temp = node->left;
+        while(temp->right != 0){
+            temp = temp->right;
+        }
+        temp->right = node->right;
+        temp = node;
+        node = node->left;
+    }
+    delete temp;
+}
+
+template<class T>
+void BST<T>::findAndDeleteByMerging(const T &value) {
+    Node<T> *node = root, *prev = 0;
+    while (node != 0){
+        if (node->info == value){
+            break;
+        }
+        prev = node;
+        if (value < node->info){
+            node = node->left;
+        }
+        else {
+            node = node->right;
+        }
+    }
+    
+    if (node != 0 && node->info == value){
+        if (node == root){
+            deleteByMerging(root);
+        }
+        else if(prev->left == node){
+            deleteByMerging(prev->left);
+        }
+        else {
+            deleteByMerging(prev->right);
+        }
+    }
+    else if (root != 0){
+        std::cout << value << " is not in the tree\n";
+    }
+    else {
+        std::cout << "The tree is empty\n";
+    }
+}
+
 template class BST<int>;
