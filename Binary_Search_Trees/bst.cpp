@@ -74,4 +74,32 @@ void BST<T>::postorder(Node<T> *p){
     }
 }
 
+template<class T>
+void BST<T>::MorrisInorder(){
+    Node<T> *p = root, *temp;
+
+    while (p != 0){
+        if (p->left == 0){
+            visit(p);
+            p = p->right;
+        }
+        else {
+            temp = p->left;
+            while(temp->right != 0 && temp->right != p){
+                temp = temp->right;
+            }
+            
+            if(temp->right == 0){
+                temp->right = p;
+                p = p->left;
+            }
+            else {
+                visit(p);
+                temp->right = 0;
+                p = p->right;
+            }
+        }
+    }
+}
+
 template class BST<int>;
