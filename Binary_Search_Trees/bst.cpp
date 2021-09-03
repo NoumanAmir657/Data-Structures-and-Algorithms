@@ -259,4 +259,15 @@ void BST<T>::findAndDeleteByCopying(const T &value) {
     }
 }
 
+// balancing a bst
+template<class T>
+void BST<T>::balance(T data[], int first, int last){
+    if (first <= last){
+        int middle = (first+last)/2;
+        insert(data[middle]);
+        balance(data, first, middle-1);
+        balance(data, middle+1, last);
+    }
+}
+
 template class BST<int>;

@@ -83,7 +83,7 @@ class BST {
         void findAndDeleteByMerging(const T&);
         void findAndDeleteByCopying(const T&);
         void deleteByCopying(Node<T>*&);
-        void balance(T*, int, int);
+        void balance(T[], int, int);
 
     protected:
         Node<T> *root;
