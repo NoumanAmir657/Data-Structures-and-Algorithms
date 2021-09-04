@@ -3,4 +3,4 @@
 ## Content
 
   * Stack
-  * ..* Hello
+      - Array Based Stack
