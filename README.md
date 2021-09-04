@@ -3,4 +3,5 @@
 ## Content
 
   * Stack
-      - Array Based Stack
+     - Array Based Stack
+          - Check Parentheses
