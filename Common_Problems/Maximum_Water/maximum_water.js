@@ -24,14 +24,14 @@ const optimizedMaximumWater = (array) => {
     for (let i = 0; i < array.length-1; ++i){
         let area = Math.min(array[a], array[b]) * (b - a);
         maxArea = Math.max(area, maxArea);
-        if (a < b){
+        if (array[a] < array[b]){
             ++a;
         }
         else {
-            ++b;
+            --b;
         }
     }
     return maxArea
 }
 
-console.log(optimizedMaximumWater([4,1,8,2,3,9]));
+console.log(optimizedMaximumWater([2,3,4,5,18,17,6]));
