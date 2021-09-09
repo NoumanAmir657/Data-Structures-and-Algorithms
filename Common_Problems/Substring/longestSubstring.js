@@ -55,4 +55,34 @@ const anotherLongestSubstring = (str) => {
     return maxLength
 }
 
-console.log(anotherLongestSubstring("abcbacd"))
+
+// Time Complexity O(n)
+// Space Complexity O(n)
+// optimal solution
+const optimizedLongestSubstring = (str) => {
+    let maxLength = 0;
+    let length = 0;
+    let i = 0
+    let seenChars = {}
+
+    if (str.length <= 1){
+        return str.length
+    }
+
+    while (i < str.length) {
+        if (seenChars[str[i]] || seenChars[str[i]] === 0){
+            length = 0;
+            i = seenChars[str[i]] + 1
+            seenChars = {}
+        }
+        else {
+            seenChars[str[i]] = i
+            length++
+            maxLength = Math.max(maxLength, length)
+            ++i;
+        }
+    }
+    return maxLength
+}
+
+console.log(optimizedLongestSubstring("abcabcbb"))
