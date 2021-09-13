@@ -22,3 +22,4 @@
      - Water Bars
      - Backspace
      - Longest Substring without repeating characters.
+     - Palindromes
