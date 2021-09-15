@@ -316,3 +316,58 @@ void IntSLList::sortedInsertion(int value){
         }
     }
 }
+
+void IntSLList::reversalMN(int m, int n) {
+    IntSLLNode *mPre = 0;
+    IntSLLNode *temp = head;
+    IntSLLNode *pre = head;
+    IntSLLNode *current = head;
+    IntSLLNode *temp2 = head;
+    int count = 0;
+
+    while (count <= n){
+        
+        if (count == m){
+            mPre = pre;
+            pre = current;
+            current = current->next;   
+        }
+        else if (count > m && count < n && current != 0){
+            temp = current->next;
+            temp2 = current;
+
+            current->next = pre;
+
+            current = temp;
+            pre = temp2;
+        }
+        else if (count == n) {
+            
+            if (m == 0){
+                // head = pre;
+                head = current;
+                if (current->next == 0){
+                    tail = mPre;
+                }
+                // mPre->next->next = mPre;
+                mPre->next = current->next;
+                current->next = pre;
+            }
+            else {
+                if (current->next == 0){
+                    tail = mPre;
+                }
+                // mPre->next->next = current;
+                // mPre->next = pre;
+                mPre->next->next = current->next;
+                mPre->next = current;
+                current->next = pre;
+            }
+        }
+        else {
+            pre = current;
+            current = current->next;
+        }
+        ++count;
+    }
+}

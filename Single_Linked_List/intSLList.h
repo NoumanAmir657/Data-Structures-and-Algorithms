@@ -39,6 +39,7 @@ class IntSLList {
         void groupingNodes();
         void swapNodes(int, int);
         void sortedInsertion(int);
+        void reversalMN(int, int);
     
     private:
         IntSLLNode *head, *tail;

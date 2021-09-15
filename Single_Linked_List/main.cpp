@@ -4,19 +4,17 @@
 
 int main() {
     IntSLList list;
-    list.addToHead(2);
-    list.addToTail(6);
+    list.addToHead(1);
+    list.addToTail(2);
     list.addToTail(3);
     list.addToTail(4);
     list.addToTail(5);
-    list.addToTail(7);
-    list.addToTail(8);
-    list.addToTail(9);
+    list.addToTail(6);
 
     //list.reverseLinkedList();
     //list.deleteOdds();
-    list.groupingNodes();
-    //list.swapNodes(1,6);    
+    //list.swapNodes(1,6); 
+    list.reversalMN(0, 5);
     list.printList();
     
 
