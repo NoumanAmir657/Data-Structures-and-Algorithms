@@ -3,7 +3,6 @@
 ## Content
   * Linked List
      - Single Linked List
-	- m n Reversal
      - Double Linked List
      - Circular Linked List
   * Stack
@@ -24,3 +23,4 @@
      - Backspace
      - Longest Substring without repeating characters.
      - Palindromes
+     - m n Reversal
