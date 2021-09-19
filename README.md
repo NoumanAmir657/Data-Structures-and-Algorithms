@@ -25,3 +25,4 @@
      - Palindromes
      - m n Reversal
      - Flattening Double Linked List
+     - Cycle Detection in Linked List
