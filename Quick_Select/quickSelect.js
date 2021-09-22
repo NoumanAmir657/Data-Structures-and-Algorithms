@@ -1,11 +1,14 @@
-// Time Complexity O(n log(n))
-// Space Complexity O(n)
-const quickSort = (array, startIndex, endIndex) => {
+const quickSelect = (array, startIndex, endIndex, k) => {
     if (startIndex < endIndex){
         let pivotIndex = partition(array, startIndex, endIndex)
 
-        quickSort(array, startIndex, pivotIndex-1)
-        quickSort(array, pivotIndex+1, endIndex)
+        if (pivotIndex > k){
+            quickSelect(array, startIndex, pivotIndex-1, k)
+        }
+        else if (pivotIndex < k){
+            quickSelect(array, pivotIndex+1, endIndex, k)
+        }
+        return array[k]
     }
 }
 
@@ -30,3 +33,11 @@ const partition = (array, startIndex, endIndex) => {
 
     return middleIndex
 }
+
+const kthSmallestElement = (array, k) => {
+    return quickSelect(array, 0, array.length-1, k) 
+}
+
+const array = [25,21,12,40,37,43,14,28]
+console.log(kthSmallestElement(array, 5))
+console.log(array)
