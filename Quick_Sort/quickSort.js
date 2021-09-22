@@ -29,8 +29,11 @@ const partition = (array, startIndex, endIndex) => {
     return middleIndex
 }
 
-const array = [25,21,12,40,37,43,14,28]
+const kthLargestElement = (array, k) => {
+    quickSort(array, 0, array.length-1)
 
-console.log(array)
-quickSort(array, 0, array.length - 1)
-console.log(array)
+    return array[array.length - k]
+}
+
+const array = [25,21,12,40,37,43,14,28]
+console.log(kthLargestElement(array, 5))
