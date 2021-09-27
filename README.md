@@ -26,3 +26,6 @@
      - m n Reversal
      - Flattening Double Linked List
      - Cycle Detection in Linked List
+     - Least number of Parenthesis
+     - Maximum Height of Binary Tree
+     - Level Orders of Binary Tree

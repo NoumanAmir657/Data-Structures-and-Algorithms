@@ -51,7 +51,9 @@ const levelOrder = (root) => {
         }
         ++count
       }
+      result.push(currentValues)
     }
+    return result
 }
 
 console.log(levelOrder(tree))
