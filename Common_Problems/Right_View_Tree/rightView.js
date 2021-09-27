@@ -61,4 +61,20 @@ const rightView = (root) => {
     return result
 }
 
-console.log(rightView(tree))
+const depthFirstRightView = (root, savedLevel, count, result) => {
+    if (root) {
+        if (!savedLevel.get(count)){
+            savedLevel.set(count, root.value)
+            result.push(root.value)
+        }
+        depthFirstRightView(root.right, savedLevel, count+1, result)
+        
+        depthFirstRightView(root.left, savedLevel, count+1, result)
+        
+    }
+
+    return result
+}
+
+
+console.log(depthFirstRightView(tree, new Map(), 0, []))
