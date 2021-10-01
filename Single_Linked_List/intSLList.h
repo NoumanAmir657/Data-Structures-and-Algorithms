@@ -36,10 +36,11 @@ class IntSLList {
         void printReverse() const;
         void reverseLinkedList();
         void deleteOdds();
-        void groupingNodes();
+        // void groupingNodes();
         void swapNodes(int, int);
         void sortedInsertion(int);
         void reversalMN(int, int);
+        void testGrouping();
     
     private:
         IntSLLNode *head, *tail;

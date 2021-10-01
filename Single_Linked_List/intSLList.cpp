@@ -180,6 +180,7 @@ void IntSLList::deleteOdds() {
     }
 }
 
+/*
 void IntSLList::groupingNodes() {
     IntSLLNode *temp = head;
     IntSLLNode *current = head;
@@ -227,6 +228,7 @@ void IntSLList::groupingNodes() {
         }
     }
 }
+*/
 
 void IntSLList::swapNodes(int x, int y) {
     if (IntSLList::isInList(x) && IntSLList::isInList(y)){
@@ -369,5 +371,49 @@ void IntSLList::reversalMN(int m, int n) {
             current = current->next;
         }
         ++count;
+    }
+}
+
+void IntSLList::testGrouping() {
+    // assuming the first node is even
+    // arrangment is even then odd numbers
+
+    if (IntSLList::isEmpty()){
+        return ;
+    }
+
+    int x = 0;
+    if (!((head->info % 2) == 0)){
+        x = 1;
+    }
+
+    IntSLLNode *current = head->next;
+    IntSLLNode *prev = head;
+    IntSLLNode *latestEven = head;
+
+    while(current){
+        if ((current->info % 2) == (0+x)){
+            if((prev->info % 2) == (0+x)){
+                latestEven = current;
+                prev = current;
+                current = current->next;
+                //continue;
+            }
+            else {
+                if (current == tail){
+                    tail = prev;
+                }
+                prev->next = current->next;
+                current->next = latestEven->next;
+                latestEven->next = current;
+                
+                latestEven = current;
+                current = prev->next;
+            }
+        }
+        else {
+            prev = current;
+            current = current->next;
+        }
     }
 }
