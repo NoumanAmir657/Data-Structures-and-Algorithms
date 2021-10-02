@@ -14,7 +14,10 @@
   * Queue
      - Linear Queue
      - Circular Queue
+  * Binary Search
   * Binary Search Trees
+  * Quick Sort
+  * Quick Select
   * Common Problems
      - 8 Queen's Problem using Backtracking
      - Find Pair that sums up to target
@@ -29,3 +32,6 @@
      - Least number of Parenthesis
      - Maximum Height of Binary Tree
      - Level Orders of Binary Tree
+     - Number of Nodes
+     - Right View of Tree
+     - Valid BST
