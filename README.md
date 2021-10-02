@@ -18,6 +18,7 @@
   * Binary Search Trees
   * Quick Sort
   * Quick Select
+  * Priority Queue
   * Common Problems
      - 8 Queen's Problem using Backtracking
      - Find Pair that sums up to target
