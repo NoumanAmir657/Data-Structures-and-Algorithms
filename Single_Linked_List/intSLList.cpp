@@ -417,3 +417,23 @@ void IntSLList::testGrouping() {
         }
     }
 }
+
+void IntSLList::testReverse() {
+    reverse(head, head->next);
+}
+
+void IntSLList::reverse(IntSLLNode *current, IntSLLNode *post) {
+    if (post != 0){
+        reverse(current->next, post->next);
+    }
+
+    if (current == head){
+        current->next = 0;
+        head = tail;
+        tail = current;
+    }
+
+    if (post != 0){
+        post->next = current;
+    }
+}

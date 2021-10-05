@@ -41,6 +41,8 @@ class IntSLList {
         void sortedInsertion(int);
         void reversalMN(int, int);
         void testGrouping();
+        void testReverse();
+        void reverse(IntSLLNode *, IntSLLNode*);
     
     private:
         IntSLLNode *head, *tail;

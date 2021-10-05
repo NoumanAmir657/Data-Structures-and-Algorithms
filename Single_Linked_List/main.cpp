@@ -15,9 +15,10 @@ int main() {
     //list.deleteOdds();
     //list.swapNodes(1,6); 
     //list.reversalMN(0, 5);
-    list.testGrouping();
-    list.addToTail(9);
-    list.testGrouping();
+    //list.testGrouping();
+    //list.addToTail(9);
+    //list.testGrouping();
+    list.testReverse();
     list.printList();
     
 
