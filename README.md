@@ -19,6 +19,8 @@
   * Quick Sort
   * Quick Select
   * Priority Queue
+  * Breadth First Traversal of 2D-Arrays
+  * Depth First Traversal of 2D-Arrays
   * Common Problems
      - 8 Queen's Problem using Backtracking
      - Find Pair that sums up to target
@@ -36,3 +38,5 @@
      - Number of Nodes
      - Right View of Tree
      - Valid BST
+     - Islands
+     - Rotten Oranges
