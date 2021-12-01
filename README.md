@@ -14,13 +14,27 @@
   * Queue
      - Linear Queue
      - Circular Queue
-  * Binary Search
-  * Binary Search Trees
-  * Quick Sort
-  * Quick Select
-  * Priority Queue
-  * Breadth First Traversal of 2D-Arrays
-  * Depth First Traversal of 2D-Arrays
+  * Trees
+     - Binary Search Trees
+     - AVL Trees
+  * Heap
+     - Priority Queue
+  * 2D-Arrays
+     - Breadth First Traversal of 2D-Arrays
+     - Depth First Traversal of 2D-Arrays
+  * Search
+     - Binary Search
+  * Sorting
+     - Bubble Sort
+     - Selection Sort
+     - Insertion Sort
+     - Merge Sort
+     - Quick Sort
+  * Graphs
+     - Breadth First Traversal
+     - Depth First Traversal
+     - Topological Sort
+     - Dijkstras Algorithm
   * Common Problems
      - 8 Queen's Problem using Backtracking
      - Find Pair that sums up to target
@@ -42,3 +56,6 @@
      - Rotten Oranges
      - Matrix Rotation
      - Walls and Gates
+     - Quick Select
+     - Employee
+     - Median of Two Arrays
