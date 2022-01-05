@@ -22,6 +22,14 @@ const minTime = (timeArray, seen) => {
     return minIndex    
 }
 
+const maxTime = (timeArray) => {
+    let max = -Infinity
+    for (let i = 0; i < timeArray.length; ++i){
+        if (timeArray[i] > max){max = timeArray[i]}
+    }
+    return max
+}
+
 const totalTime = (graph, adjMatrix, k) => {
     const timeArray = new Array(5).fill(0).map(x => x = Infinity)
     timeArray[k] = 0
@@ -50,6 +58,11 @@ const graph = [
 ]
 
 const adjMatrix = constructadjMatrix(graph)
-console.log(adjMatrix)
-const k = 0
-console.log(totalTime(graph, adjMatrix, k))
+const k = 0 // node to start from
+const timeArray = totalTime(graph, adjMatrix, k)
+
+// solution to networks problem
+// find max in the timeArray
+console.log(maxTime(timeArray))
+
+
