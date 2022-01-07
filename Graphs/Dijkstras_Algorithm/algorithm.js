@@ -27,7 +27,7 @@ const maxTime = (timeArray) => {
     for (let i = 0; i < timeArray.length; ++i){
         if (timeArray[i] > max){max = timeArray[i]}
     }
-    return max
+    return max === Infinity ? -1 : max
 }
 
 const totalTime = (graph, adjMatrix, k) => {
