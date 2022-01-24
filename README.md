@@ -35,6 +35,7 @@
      - Depth First Traversal
      - Topological Sort
      - Dijkstras Algorithm
+     - Bellman Ford Algorithm
   * Common Problems
      - 8 Queen's Problem using Backtracking
      - Find Pair that sums up to target

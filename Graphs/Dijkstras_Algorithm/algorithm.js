@@ -64,5 +64,3 @@ const timeArray = totalTime(graph, adjMatrix, k)
 // solution to networks problem
 // find max in the timeArray
 console.log(maxTime(timeArray))
-
-
