@@ -64,3 +64,5 @@
      - Max Subarray Problem
      - Strassen's Algorithm for Matrix Multiplication
      - Minimum Cost of Climbing Staires
+     - Knight's Probability
+     - Cutting Rod
