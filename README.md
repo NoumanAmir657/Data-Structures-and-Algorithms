@@ -66,3 +66,4 @@
      - Minimum Cost of Climbing Staires
      - Knight's Probability
      - Cutting Rod
+     - Longest Subsequence Problem
