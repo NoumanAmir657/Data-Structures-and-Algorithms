@@ -67,3 +67,4 @@
      - Knight's Probability
      - Cutting Rod
      - Longest Subsequence Problem
+     - Monarchy Interface
