@@ -69,3 +69,4 @@
      - Longest Subsequence Problem
      - Monarchy Interface
      - Delete and Earn
+     - Jump Game
