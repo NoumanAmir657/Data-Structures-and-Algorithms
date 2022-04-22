@@ -36,6 +36,7 @@
      - Topological Sort
      - Dijkstras Algorithm
      - Bellman Ford Algorithm
+     - Prim's Algorithm
   * Common Problems
      - 8 Queen's Problem using Backtracking
      - Find Pair that sums up to target
