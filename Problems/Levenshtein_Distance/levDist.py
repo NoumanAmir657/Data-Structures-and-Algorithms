@@ -38,10 +38,10 @@ while currentVal != 0:
     minVal = min([up, left, diag])
     minIndex = [up, left, diag].index(minVal)
 
-    if minIndex == 0:
+    if minVal == up:
         currentR -= 1
         ins = ins + 1 if currentVal - matrix[currentR, currentC] > 0 else ins
-    elif minIndex == 1:
+    elif minVal == left:
         currentC -= 1
         dels = dels + 1 if currentVal - matrix[currentR, currentC] > 0 else dels
     else:

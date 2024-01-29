@@ -71,3 +71,8 @@
      - Monarchy Interface
      - Delete and Earn
      - Jump Game
+     - Best Time to Buy and Sell Stock
+     - Minimum Number of Swaps to Make the String Balanced
+     - Number of Pairs of Interchangeable Rectangles
+     - Remove Duplicates from Sorted Array
+     - Unique Lenght-3 Palindromic Subsequences
