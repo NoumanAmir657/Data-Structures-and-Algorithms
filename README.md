@@ -76,3 +76,8 @@
      - Number of Pairs of Interchangeable Rectangles
      - Remove Duplicates from Sorted Array
      - Unique Lenght-3 Palindromic Subsequences
+     - Repeated DNA Sequences
+     - Number of Zero Filled Subarrays
+     - Optimal Parition of String
+     - Text Justification
+     - Naming a Company
