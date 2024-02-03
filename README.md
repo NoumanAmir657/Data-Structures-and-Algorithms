@@ -86,3 +86,4 @@
      - Subsets
      - Combination Sum
      - Permutation
+     - Word Search
