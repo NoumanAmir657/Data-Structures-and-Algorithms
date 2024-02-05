@@ -87,3 +87,4 @@
      - Combination Sum
      - Permutation
      - Word Search
+     - Palindrome Partitioning
