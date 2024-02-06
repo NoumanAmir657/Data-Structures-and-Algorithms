@@ -88,3 +88,4 @@
      - Permutation
      - Word Search
      - Palindrome Partitioning
+     - N Queens
