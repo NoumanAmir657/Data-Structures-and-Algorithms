@@ -90,3 +90,4 @@
      - Palindrome Partitioning
      - N Queens
      - Letter Combinations of Phone Numbers
+     - Single Threaded CPU
