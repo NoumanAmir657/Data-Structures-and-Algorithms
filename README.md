@@ -91,3 +91,4 @@
      - N Queens
      - Letter Combinations of Phone Numbers
      - Single Threaded CPU
+     - Validating Stack Sequences
