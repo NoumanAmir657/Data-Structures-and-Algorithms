@@ -95,3 +95,5 @@
      - Lowest Common Ancestor of a Binary Search Tree
      - Completeness of a Binary Tree
      - Sum Root to Leaf Nuumbers
+     - House Robber
+     - Max Product
